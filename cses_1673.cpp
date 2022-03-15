@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <climits>
+#include <tuple>
 typedef long long ll;
 using namespace std;
 const ll INF = LLONG_MAX / 2;
@@ -9,21 +10,22 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int n, m, ans;
+    ll n, m, ans;
     bool update;
-    vector<tuple<ll, ll, ll>> edge(m);
+    cin >> n >> m;
+    vector<tuple<ll, ll, ll>> edge;
     vector<ll> dist(n + 1, INF);
+    edge.reserve(m);
 
     while (m--)
     {
         ll v, u, w;
         cin >> v >> u >> w;
         edge.emplace_back(v, u, -w);
-        edge.emplace_back(u, v, -w);
     }
 
     dist[1] = 0;
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i <= n; i++)
     {
         update = false;
         for (auto [v, u, w] : edge)
@@ -34,13 +36,12 @@ int main()
                 update = true;
             }
         }
-        if (!update)
+        if (ans != -dist[n] && i == n && update)
         {
-            ans = -dist[n];
+            ans = -1;
             break;
         }
-        else if (i == n && update)
-            ans = -1;
+        ans = -dist[n];
     }
     cout << ans << "\n";
 
