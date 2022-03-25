@@ -58,6 +58,7 @@ void modify_increase(ll id, ll l, ll r, ll ql, ll qr, ll x)
     ll mid = (l + r) / 2;
     modify_increase(2 * id, l, mid, ql, qr, x);
     modify_increase(2 * id + 1, mid + 1, r, ql, qr, x);
+    seg[id] = seg[2 * id] + seg[2 * id + 1];
 }
 
 void modify_set(ll id, ll l, ll r, ll ql, ll qr, ll x)
@@ -74,6 +75,7 @@ void modify_set(ll id, ll l, ll r, ll ql, ll qr, ll x)
     ll mid = (l + r) / 2;
     modify_set(2 * id, l, mid, ql, qr, x);
     modify_set(2 * id + 1, mid + 1, r, ql, qr, x);
+    seg[id] = seg[2 * id] + seg[2 * id + 1];
 }
 
 ll query(ll id, ll l, ll r, ll ql, ll qr)
