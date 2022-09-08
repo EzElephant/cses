@@ -12,11 +12,11 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> h[i];
     for (int i = 0; i < n; i++)
+    {
         cin >> s[i];
-    for (int j = 0; j < n; j++)
-        for (int i = x; i >= h[i]; i--)
-            if (i + h[j] <= x)
-                dp[i] = max(dp[i], dp[i - h[j]] + s[j]);
+        for (int j = x; j >= h[i]; j--)
+            dp[j] = max(dp[j], dp[j - h[i]] + s[i]);
+    }
     cout << dp[x] << "\n";
 
     return 0;
