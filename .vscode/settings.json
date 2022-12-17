@@ -65,7 +65,8 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "bitset": "cpp"
     },
     "editor.bracketPairColorization.enabled": true
 }
