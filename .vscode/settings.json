@@ -67,7 +67,13 @@
         "xutility": "cpp",
         "numeric": "cpp",
         "bitset": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     },
     "editor.bracketPairColorization.enabled": true
 }
